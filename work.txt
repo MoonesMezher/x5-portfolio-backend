@@ -1,0 +1,14 @@
+#1 MOONES MEZHER:
+- Setup project (laravel 10)
+- Create the repo
+- Seperate the project to small tasks
+
+#2 NEVEN GHASOUN:
+
+#3 DIANA HAMAMEH:
+
+#4 RAMI ALZEND:
+
+#5 FIRAS ALSEMGY:
+
+#6 ESMAEEL ABD:

@@ -24,7 +24,7 @@ class UpdateProjectRequest extends FormRequest
         return [
             'category' => 'nullable|string|max:255',
             'title' => 'nullable|string|max:255',
-            'image' => 'nullable',
+            'image' => 'image|mimes:jpeg,png,jpg,gif|max:2048',
         ];
     }
 }

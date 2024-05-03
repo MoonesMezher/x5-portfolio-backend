@@ -6,19 +6,19 @@ use App\Http\Requests\StoreProjectRequest;
 use App\Http\Requests\UpdateProjectRequest;
 use App\Models\Project;
 use Illuminate\Http\Request;
+use Illuminate\Http\Response;
+use App\Traits\ApiResponseTrait;
 
 class ProjectController extends Controller
 {
+    use ApiResponseTrait;
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
         $projects = Project::all();
-        return response()->json([
-            'status' => 'success',
-            'projects' => $projects
-        ]);
+        return $this->apiResponse(true , 'data back successfully' , $projects , Response::HTTP_OK);
     }
 
     /**
@@ -39,10 +39,7 @@ class ProjectController extends Controller
         }
         $project->save();
 
-        return  response()->json([
-            'status' => 'success',
-            'projects' => $project
-        ]);
+        return $this->apiResponse(true , 'project created successfully' , $project , Response::HTTP_CREATED);
     }
 
     /**
@@ -51,10 +48,7 @@ class ProjectController extends Controller
     public function show(Project $project)
     {
         $projects = Project::all();
-        return response()->json([
-            'status' => 'success',
-            'projects' => $projects
-        ]);
+        return $this->apiResponse(true , 'data back successfully' , $projects , Response::HTTP_OK);
     }
 
     /**
@@ -74,11 +68,7 @@ class ProjectController extends Controller
             $project->image = $imageName;
         }
         $project->save();
-
-        return  response()->json([
-            'status' => 'success',
-            'projects' => $project
-        ]);
+        return $this->apiResponse(true , 'data Updated successfully' , $project , Response::HTTP_OK);
 
     }
 
@@ -88,9 +78,6 @@ class ProjectController extends Controller
     public function destroy(Project $project)
     {
         $project->delete();
-        return  response()->json([
-            'status' => 'Deleted successfully',
-            'projects' => $project
-        ]);
+        return $this->apiResponse(true , 'data Deleted successfully' , $project , Response::HTTP_OK);
     }
 }

@@ -4,6 +4,11 @@
 - Seperate the project to small tasks
 
 #2 NEVEN GHASOUN:
+- crud operations for projectController
+- create ApiResponseTrait
+- create StoreProjectRequest
+- create UpdateProjectRequest
+- add feild to project Model 
 
 #3 DIANA HAMAMEH:
 

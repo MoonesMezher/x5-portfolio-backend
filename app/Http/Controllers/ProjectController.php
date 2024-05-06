@@ -54,9 +54,9 @@ class ProjectController extends Controller
      */
     public function show(Project $project)
     {
-        // $project = Project::get($project);
+        $project = Project::get($project);
 
-        // return $this->apiResponse(true , 'data back successfully' , $project , Response::HTTP_OK);
+        return $this->apiResponse(true , 'data back successfully' , $project , Response::HTTP_OK);
     }
 
     /**

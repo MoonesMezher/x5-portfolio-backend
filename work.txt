@@ -12,3 +12,10 @@
 #5 FIRAS ALSEMGY:
 
 #6 ESMAEEL ABD:
+//diana 
+  Create a database
+Create a table message
+Create a controller message crud
+Set up the model message
+Create a resourse message
+Add a route api

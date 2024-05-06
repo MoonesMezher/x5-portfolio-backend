@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ProjectController;
+use App\Http\Controllers\MessageController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -16,7 +17,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::controller(AdminController::class)->group(function () {
-    Route::post('login', 'login');
-    Route::post('logout', 'logout');
-});
+Route::post('login', [AdminController::class, 'login']);
+
+Route::post('logout', [AdminController::class, 'logout']);
+
+Route::apiResource('messages',MessageController::class);
+
+Route::apiResource('projects',ProjectController::class);

@@ -2,33 +2,35 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\adminLogin;
-use Illuminate\Http\Request;
+use App\Http\Requests\LoginAdminRequest;
+// use Illuminate\Http\Request;
 
 class AdminController extends Controller
 {
-    public function login(adminLogin $request)
+    public function login(LoginAdminRequest $request)
     {
         $email='admin@admin.com';
+
         $password='admin@123';
-        if($request->email == $email && $request->password == $password){
+
+        $admin = $request->email == $email && $request->password == $password;
+
+        if($admin){
             return response()->json([
                 'status' => 'success',
-                'dashBoard' =>true,
+                'admin' => $admin,
             ]);
         }else{
             return response()->json([
-                'status' => 'error',
-                'dashBoard' => false,
+                'status' => 'failed',
+                'admin' => $admin,
             ], 401);
         }
     }
-    public function logout(Request $request) {
-        if(isset($request->logout)){
-            return response()->json([
-                'status' => 'success',
-                'dashBoard' =>false,
-            ]);
-        }
+    public function logout() {
+        return response()->json([
+            'status' => 'success',
+            'admin' => false,
+        ]);
     }
 }

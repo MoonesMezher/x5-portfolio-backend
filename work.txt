@@ -2,20 +2,19 @@
 - Setup project (laravel 10)
 - Create the repo
 - Seperate the project to small tasks
+- Review the code & make it more clean
 
 #2 NEVEN GHASOUN:
 
 #3 DIANA HAMAMEH:
+- Create a message migration
+- Create a controller message crud
+- Set up the model message
+- Create a resourse message
+- Add a route api (messages)
 
 #4 RAMI ALZEND:
 
 #5 FIRAS ALSEMGY:
 
 #6 ESMAEEL ABD:
-//diana 
-  Create a database
-Create a table message
-Create a controller message crud
-Set up the model message
-Create a resourse message
-Add a route api

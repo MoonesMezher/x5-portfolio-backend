@@ -8,6 +8,7 @@ use App\Models\Project;
 // use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use App\Traits\ApiResponseTrait;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
 
 class ProjectController extends Controller
@@ -65,23 +66,22 @@ class ProjectController extends Controller
      */
     public function update(UpdateProjectRequest $request, $id)
     {
-        Log::error($request->title);
         try {
             $project = Project::find($id);
 
             $project->title = $request->title;
             $project->category = $request->category;
 
-            if ($request->hasFile('image')) {
-                $image = $request->file('image');
-                $imageName = time() . '.' . $image->getClientOriginalExtension();
-                $image->move(public_path('images'), $imageName);
-                $project->image = $imageName;
-            }
+            // if ($request->hasFile('image')) {
+            //     $image = $request->file('image');
+            //     $imageName = time() . '.' . $image->getClientOriginalExtension();
+            //     $image->move(public_path('images'), $imageName);
+            //     $project->image = $imageName;
+            // }
+
+            // $image->move(public_path('images'), $imageName);
 
             $project->save();
-
-            $image->move(public_path('images'), $imageName);
 
             return $this->apiResponse(true , 'data Updated successfully' , $project , Response::HTTP_OK);
         } catch (\Throwable $th) {

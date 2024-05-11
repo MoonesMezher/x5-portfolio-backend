@@ -24,7 +24,6 @@ class UpdateProjectRequest extends FormRequest
         return [
             'category' => 'sometimes|string|max:255',
             'title' => 'sometimes|string|max:255',
-            'image' => 'sometimes|image|mimes:jpeg,png,jpg,gif|max:2048',
         ];
     }
 }

@@ -8,6 +8,7 @@ use App\Models\Project;
 // use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use App\Traits\ApiResponseTrait;
+use Illuminate\Support\Facades\Log;
 
 class ProjectController extends Controller
 {
@@ -64,8 +65,9 @@ class ProjectController extends Controller
      */
     public function update(UpdateProjectRequest $request, $id)
     {
+        Log::error($request->title);
         try {
-            $project = Project::findOrFail($id);
+            $project = Project::find($id);
 
             $project->title = $request->title;
             $project->category = $request->category;

@@ -24,7 +24,7 @@ class StoreProjectRequest extends FormRequest
         return [
             'category' => 'required|string|max:255',
             'title' => 'required|string|max:255',
-            'image' => 'image|mimes:jpeg,png,jpg,gif|max:2048',
+            'image' => 'image|mimes:jpeg,png,jpg,gif',
         ];
     }
 }

@@ -4,12 +4,14 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\StoreMessageRequest;
 use App\Models\Message;
+use App\Traits\ApiResponseTrait;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Log;
 
 class MessageController extends Controller
 {
+    use ApiResponseTrait;
     /**
      * Display a listing of the resource.
      */
@@ -25,6 +27,7 @@ class MessageController extends Controller
      */
     public function store(StoreMessageRequest $request)
     {
+        Log::error($request);
 
         try {
             $messages = Message::create([

@@ -5,6 +5,11 @@
 - Review the code & make it more clean
 
 #2 NEVEN GHASOUN:
+- Crud operations for projectController
+- Create ApiResponseTrait
+- Create StoreProjectRequest
+- Create UpdateProjectRequest
+- Add feild to project Model
 
 #3 DIANA HAMAMEH:
 - Create a message migration
@@ -16,5 +21,6 @@
 #4 RAMI ALZEND:
 
 #5 FIRAS ALSEMGY:
+- Create AdminController (logic of login & logout method)
 
 #6 ESMAEEL ABD:
